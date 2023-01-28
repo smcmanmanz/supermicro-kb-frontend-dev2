@@ -542,4 +542,10 @@ img{
 	padding-top: 100px;
 }
 
+.suggestions{
+	background-color: gray;
+}
+.active {
+	color: black;
+  }
 /*==============*/

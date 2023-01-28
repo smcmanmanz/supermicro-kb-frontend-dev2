@@ -24,7 +24,7 @@ class SearchResults extends React.Component {
         super(props);
 
         this.handleFilterChange = this.handleFilterChange.bind(this);
-        this.state = { categories: CATEGORIES, entries: [], filters: new Set() };
+        this.state = { categories: CATEGORIES, entries: [], filters: new Set(), keywords:[]};
         const windowUrl = window.location.search;
         this.query = new URLSearchParams(windowUrl).get("query");
         console.log("Check the query value:"+ this.query);
@@ -34,10 +34,17 @@ class SearchResults extends React.Component {
         console.log("Component did mount");
         console.log("Print out query"+this.query);
         const api = new API();
+        api.getKeywords().then((response)=>{
+            console.log(response.data);
+            this.setState({keywords: response.data.map(({subject}) => subject)});
+        })
+        .catch((err)=> console.log(err));
+
         api.getEntries(this.query).then((response)=>{
             console.log(response.data);
             this.setState({entries: response.data});
             console.log("Time to check the entries: "+this.state.entries);
+            console.log(this.state);
         })
         .catch((err)=> console.log(err));
     }
@@ -75,7 +82,7 @@ class SearchResults extends React.Component {
                 </div>
                 <div>
                     <div>
-                        <SearchInput />
+                        <SearchInput autoCompleteData={this.state.keywords}/>
                     </div>
 
                     <div class="container">
