@@ -543,9 +543,12 @@ img{
 }
 
 .suggestions{
-	background-color: gray;
+	background-color: lightgray;
+	list-style-type: none;
+	color: black;
+	
 }
 .active {
-	color: black;
+	color: white;
   }
 /*==============*/

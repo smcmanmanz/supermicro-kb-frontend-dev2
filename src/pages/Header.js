@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "../style.css"
 import { Link, Routes, Route } from 'react-router-dom'
+import UserAuth from "../services/UserAuth";
 
 export default function Header() {
     //using font-awesome hamburger
@@ -37,6 +38,10 @@ export default function Header() {
                             <Link to="/Components" className="nav-links" onClick={closeMobileMenu}>
                                 Components
                             </Link>
+                        </li>
+                        <li className="nav-items">
+                            {UserAuth.getUsername()}&nbsp;
+                            <button onClick={UserAuth.doLogout}>Logout</button>
                         </li>
                     </ul>
 

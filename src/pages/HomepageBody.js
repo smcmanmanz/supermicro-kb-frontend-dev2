@@ -14,7 +14,7 @@ export default function HomepageBody()
         const api = new API();
         api.getKeywords().then((response)=>{
             console.log(response.data);
-            setKeywords(response.data.map(({subject}) => subject));
+            setKeywords(response.data.map(({keyword}) => keyword));
         }).catch((err)=> console.log(err));
     }, []);
 

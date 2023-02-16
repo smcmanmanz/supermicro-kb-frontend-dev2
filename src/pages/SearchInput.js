@@ -23,7 +23,7 @@ export default function SearchInput(props)
         if(query.length >0){
             const filterSuggestions = keywords.filter(
                 (keyword)=>keyword.toLowerCase().indexOf(query) >-1
-            );
+            ).slice(0,10); //only showing up to top 10
             console.log("Check the filterSuggestions length:"+filterSuggestions.length);
             setSuggestions(filterSuggestions);
             setSuggestionsActive(true);
@@ -95,6 +95,9 @@ export default function SearchInput(props)
                 <div className="search_box">
                     <input type="search" className="input" value={value} placeholder="Enter SKU, Components ..." onChange={handleChange} onKeyDown={handleKeyDown}/>             
                         <Button variant="primary" onClick={navigateResult}>Search</Button>
+                        <br /> 
+                        <br /> 
+                        <br />
                         {suggestionsActive && <Suggestions />}
                 </div>
 

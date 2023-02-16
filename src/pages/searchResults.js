@@ -35,8 +35,9 @@ class SearchResults extends React.Component {
         console.log("Print out query"+this.query);
         const api = new API();
         api.getKeywords().then((response)=>{
+            console.log("check suggestions on search result page.")
             console.log(response.data);
-            this.setState({keywords: response.data.map(({subject}) => subject)});
+            this.setState({keywords: response.data.map(({keyword}) => keyword)});
         })
         .catch((err)=> console.log(err));
 
@@ -104,7 +105,6 @@ class SearchResults extends React.Component {
             </div>
         )
     }
-
 }
 
 export default SearchResults

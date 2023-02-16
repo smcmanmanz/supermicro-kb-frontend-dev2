@@ -1,0 +1,11 @@
+{
+    "realm": "StageSSO",
+    "auth-server-url": "https://stagesso.supermicro.com/auth/",
+    "ssl-required": "none",
+    "resource": "290cfd14f91540d6bcfc119308984022",
+    "credentials": {
+      "secret": "d9961ee5-5d65-4ee6-a94c-76dc18b39e91"
+    },
+    "confidential-port": 0
+  }
+  

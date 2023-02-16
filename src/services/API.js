@@ -21,6 +21,6 @@ export default class API {
 
     getKeywords = ()=>{
         console.log("Hi from API.js getKeywords()");
-        return this.init().get("/entries");
+        return this.init().get("/suggestions");
     }
 }
