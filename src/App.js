@@ -7,9 +7,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CommonQuestions from "./pages/CommonQuestions";
 import Components from "./pages/Components";
 import ProductFamily from "./pages/ProductFamily";
-import Article from "./pages/ArticlePage"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from "./pages/PrivateRoute";
+import Article from "./pages/Article";
 
 const App = () => {
   
@@ -34,8 +34,8 @@ const App = () => {
 
           <Route path="/Components" element={<Components />}> </Route>
           <Route path="/ProductFamily" element={<ProductFamily />}> </Route>
-          <Route path="/ArticlePage" element={<Article />}> </Route>
           <Route path="/CommonQuestions" element={<CommonQuestions />}> </Route>
+          <Route path="/Article" element={<Article />}> </Route>
         </Routes>
         </PrivateRoute>
       </div>

@@ -2,6 +2,7 @@ import React from "react"
 import SidebarCheckbox from "./SidebarCheckbox";
 import API from "../services/API"
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const CATEGORIES = [
     "Questions & Answers",
@@ -88,7 +89,12 @@ class SearchResults extends React.Component {
 
                     <div class="container">
                         <div class="resultsSpace">
-                            {
+                        <div class="result">
+                                        <Link to="/Article" className="">article_1</Link>
+                                        <p>First 50 chars of the article</p>
+                        </div>
+                            {     
+                              
                                 this.state.entries.map((entry, index) => (
                                     <div class="result">
                                         <h2>{entry.subject}</h2>

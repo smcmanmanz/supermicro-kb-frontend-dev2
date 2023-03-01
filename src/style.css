@@ -17,6 +17,7 @@ HTML, body {
 	min-height: 100vh;
 }
 
+
 /*==========================================*/
 /*        Navigation & Header Section       */
 /*==========================================*/
@@ -191,6 +192,15 @@ HTML, body {
 	display: flex; 
 	width: 100%;
   	justify-content: center;
+	
+}
+
+.article {
+	align-items: right;
+	display: flex; 
+	width: 100%;
+  	justify-content: center;
+	min-height: 100vh;
 	
 }
 
