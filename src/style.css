@@ -195,13 +195,9 @@ HTML, body {
 	
 }
 
-.article {
-	align-items: right;
-	display: flex; 
+.iframe {
 	width: 100%;
-  	justify-content: center;
-	min-height: 100vh;
-	
+	height: 100vh;
 }
 
 ::placeholder {

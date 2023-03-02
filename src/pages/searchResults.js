@@ -89,20 +89,33 @@ class SearchResults extends React.Component {
 
                     <div class="container">
                         <div class="resultsSpace">
-                        <div class="result">
-                                        <Link to="/Article" className="">article_1</Link>
-                                        <p>First 50 chars of the article</p>
-                        </div>
+                        
                             {     
-                              
+ 
                                 this.state.entries.map((entry, index) => (
-                                    <div class="result">
-                                        <h2>{entry.subject}</h2>
-                                        <hr />
-                                        <a href={entry.url}>{entry.url}</a>
-                                        <p>{entry.explanation}</p>
-                                    </div>
-                                ))
+                                    (()=>{
+                                        //if it is an article entry
+                                        if(entry.category===CATEGORIES[1]){
+                                            return (
+                                            <div class="result">
+                                            <Link to="/Article" state={{ url: entry.url }}>{entry.subject}</Link>
+                                            <p>{entry.explanation}</p>
+                                            </div>
+                                            )
+                                        }else{
+                                            return (
+                                        <div class="result">
+                                            <h2>{entry.subject}</h2>
+                                            <hr />
+                                            <a href={entry.url}>{entry.url}</a>
+                                            <p>{entry.explanation}</p>
+                                        </div>
+                                            )
+                                        }
+                                    }
+                                    
+                                )())
+                                )
                             }
                         </div>
                     </div>

@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react"
 import Button from 'react-bootstrap/Button'
 import "../style.css"
-import { useNavigate, createSearchParams, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 export default function Article(props)
 {
-    const [articleURL, setArticleURL] = useState("");
+    const location = useLocation();
 
-    //useEffect(()=>{setArticleURL(props.articleURL)},[props.articleURL]);
-    const url = "articles/article_1.html";
-    useEffect(()=>{setArticleURL(url)},[url]);
+    const { url } =location.state;
+    console.log("url is:"+url);
+
 
         return (
                  <div>
-                  <iframe src={articleURL} className="article"></iframe>
+                  <iframe src={"articles/"+ url} className="iframe"></iframe>
                   </div>
         )
 }
